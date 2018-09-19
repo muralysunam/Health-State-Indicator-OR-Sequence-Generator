@@ -1,2 +1,4 @@
-# Sequence_generator
-It can be used for simple blinking operations and the same can be used for showing current status of micro controllers
+# Health/State Indicator OR Sequence Generator - for embedded systems
+
+It can used for showing current status of micro controllers and the same can be used for simple blinking operations
+19-09-2018 - Tested on one simple project. Working fine.
