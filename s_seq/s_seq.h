@@ -1,17 +1,29 @@
+//=============================================================================================================//
+//                                                                                                             //
+//  ## Health Indicator / Sequence Generator - Library ##                                                      //
+//  This is an Arduino compatible library for showing                                                          //
+//  current state of Arduino. This can be used for displaying                                                  //
+//  sequences also                                                                                             //
+//                                                                                                             //
+//  Filename : s_seq.h                                                                                         //
+//  Description : Part of s_seq library - definition.                                                          //
+//  Library version : 0.2                                                                                      //
+//  Author : Manu M                                                                                            //
+//  Source : https://github.com/muralysunam/Health-State-Indicator-OR-Sequence-Generator/tree/master/s_seq     //
+//  Initial release : +05:30 09:42 PM, 22-09-2018, Saturday                                                    //
+//  License : MIT                                                                                              //
+//                                                                                                             //
+//  File last modified : +05:30 09:42 PM, 22-09-2018, Saturday                                                 //
+//                                                                                                             //
+//=============================================================================================================//
+
+
 #ifndef s_seq_h
 
 #define s_seq_h
 #define temp_array_cnt 30
 #define dummy_bit 0
 #include "Arduino.h"
-
-
-/*
-* This is a generic class (I tried to make it as generic as possible
-* Using this class, you can push a sequence(runtime variable) through a digital output pin
-* Please note : This can't be used effectively if you are using delay in your program.
-*/
- 
  
 class s_seq
 {
