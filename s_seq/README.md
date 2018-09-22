@@ -30,7 +30,7 @@ The library will be automatically detected by Arduino IDE (after restarting).
 ## Running the tests
 
 Try the code shown below to ensure the class is working.
-'''
+```
 #include "s_seq.h"
 void loop()
 {
@@ -43,7 +43,7 @@ void loop()
     led.play();
   }
 }
-'''
+```
 
   This example will make a sequence of 16 states which will repeat one more time immediately and then add 16 dummy states.
 
