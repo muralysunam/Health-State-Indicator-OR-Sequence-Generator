@@ -1,13 +1,13 @@
-#Health/State indicator OR Sequence Generator
+# Health/State indicator OR Sequence Generator
 
   This is a header file which contains "s_seq" class and  can be used for generating sequences (either repeating endless sequences(normal) or repeating sequences with lifetime(can be used for multiple blinks)), discreate sequences with data&dummy slots for status/ health monitoring of embedded systems.
 
-##Getting Started
+## Getting Started
 
-###Prerequisites
+### Prerequisites
   This header file is designed to work with arduino IDE. But it may also work with other IDEs. CPP language is used.
 
-###Installing
+### Installing
   The folder "s_seq" can be copied to <User directory>/Documents/Arduino/library/.
 The library will be automatically detected by Arduino IDE (after restarting).
 
@@ -27,7 +27,7 @@ The library will be automatically detected by Arduino IDE (after restarting).
 4) repeat_count - how many time the sequence should repeat immediately( before restarting)
 5) dummy_states - how many dummy states are required in between sequence restarting
 
-##Running the tests
+## Running the tests
 
 Try the code shown below to ensure the class is working.
 '''
@@ -50,10 +50,10 @@ void loop()
   Since added data is 0x8800 (0b1000100000000000), led will blink twice with a delay of 300ms (3 states*state_duration). Then it will stay off for 3300ms (3.3sec, 11states * sate_duration). repeat_count is set as 1. So this sequence will repeat once more. Then it will be off for 1000ms (dummy_states,10 states*state_duration).
 After this, the whole sequence will repeat endless.
 
-##Coding styles
+## Coding styles
   Please note: play() should be called as fast as possible (the more frequent it is called, that much precision will be available for the sequence's state duration). If the actual code is taking large execution time, play() can be put in between(n number of time as required =D). play() is taking current time (time this function is called) and changing output state as required (compared to last state change time).
 
-##Deployment
+## Deployment
 
   Sample codes for some situations are mentioned in examples folder.
 
