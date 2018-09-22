@@ -1,23 +1,41 @@
+//=============================================================================================================//
+//                                                                                                             //
+//  ## Health Indicator / Sequence Generator - Library ##                                                      //
+//  This is an Arduino compatible library for showing                                                          //
+//  current state of Arduino. This can be used for displaying                                                  //
+//  sequences also                                                                                             //
+//                                                                                                             //
+//  Filename : s_seq.cpp                                                                                       //
+//  Description : Part of s_seq library.                                                                       //
+//  Library version : 0.2                                                                                      //
+//  Author : Manu M                                                                                            //
+//  Source : https://github.com/muralysunam/Health-State-Indicator-OR-Sequence-Generator/tree/master/s_seq     //
+//  Initial release : +05:30 09:42 PM, 22-09-2018, Saturday                                                    //
+//  License : MIT                                                                                              //
+//                                                                                                             //
+//  File last modified : +05:30 09:42 PM, 22-09-2018, Saturday                                                 //
+//                                                                                                             //
+//=============================================================================================================//
+
 #include "Arduino.h"
 #include "s_seq.h"
 
-
+//constructor - used for health monitoring
 s_seq::s_seq(byte t_pin, byte t_state_per_array, byte t_array_count, byte t_repeat_count, unsigned long int t_state_duration, unsigned long int t_dummy_state_count) : pin(t_pin), state_per_array(t_state_per_array), array_count(t_array_count), repeat_count(t_repeat_count), state_duration(t_state_duration), active_state_count(t_state_per_array*t_array_count), total_state_count(active_state_count+t_dummy_state_count)  
 {
 	pinMode(pin,OUTPUT);// This for is for pin mode defining and resetting data to zero
 	reset_data();
 }
-//above - generic constructor - used for health monitoring
+
+//constructor - used for sequence repetition alone
 s_seq::s_seq(byte t_pin, byte t_state_per_array, byte t_array_count, unsigned long int t_state_duration) : pin(t_pin), state_per_array(t_state_per_array), array_count(t_array_count), repeat_count(0x00), state_duration(t_state_duration), active_state_count(t_state_per_array*t_array_count), total_state_count(0x00)  
 {
 	pinMode(pin,OUTPUT);// This for is for pin mode defining and resetting data to zero
 	reset_data();
 }
-//above - constructor - used for sequence repetition alone - no repetition and dummy states
 
-//The above shown lines are used for initializing const variables.
-  
-void s_seq::play()	// This is the main function
+//This function assess called time and writes current state to digital pin
+void s_seq::play()
 {
 	if(current_state_counter == 0) //on the first iteration, we need to initialize start_time 
 	{
@@ -70,24 +88,29 @@ void s_seq::play()	// This is the main function
 	}
 }
 
-void s_seq::reset() // resetting counter to zero means sequence will start again
+//This will reset the current sequence and sequence will start from first state
+void s_seq::reset()
 {
 	current_state_counter = 0;
 }
 
+//method to enter data to sequence. Data to each slot should be entered seperatly.
 void s_seq::put_data(byte t_seq_no, unsigned long int data)// one method to enter data. lifetime will be infinite 
 {
     seq[t_seq_no-1] = data;
     lifetime[t_seq_no-1] = 0;
 }
 
-void s_seq::put_data(byte t_seq_no, unsigned long int temp_data, byte temp_lifetime)//overloaded; this method can be used if you need to specify lifetime
+//Another method to enter data. Here you can define lifetime of the data too.
+void s_seq::put_data(byte t_seq_no, unsigned long int temp_data, byte temp_lifetime)
 {
     seq[t_seq_no-1] = temp_data;
     lifetime[t_seq_no-1] = temp_lifetime;
 }
 
-void s_seq::show_data()// This method is used for Serial out-ing current data of all sequences
+// This function is used to display current sequence data via serial port
+// Serial.begin() should be initilized on main program
+void s_seq::show_data()
 {
 	for(int i = 1 ; i <= array_count; i++)//extract array no 1 to max
 	{ 
@@ -102,12 +125,14 @@ void s_seq::show_data()// This method is used for Serial out-ing current data of
 	}
 }
 
-void s_seq::clear_data(byte t_seq_no)//clear data of selected sequence
+//This function can be used to clear data of selected array/slot
+void s_seq::clear_data(byte t_seq_no)
 {
     put_data(t_seq_no, 0x00,0);
 }
 
-void s_seq::reset_data()//clear data of all sequence
+//Clear data of sequence
+void s_seq::reset_data()
 {
     for(int i = 1; i <= array_count; i++)
 		put_data(i, 0x00,0);
