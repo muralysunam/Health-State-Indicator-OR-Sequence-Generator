@@ -62,5 +62,5 @@ After this, the whole sequence will repeat endless.
   This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Acknowledgments
-
+  To every who helped/motivated me.
 
