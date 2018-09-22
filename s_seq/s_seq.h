@@ -20,7 +20,7 @@ class s_seq
   const unsigned long int state_duration, active_state_count, total_state_count;
   byte lifetime[temp_array_cnt] , buffer_addr_calc = 0, buffer_bit_calc = 0, temp_count = 0;
   unsigned long int seq[temp_array_cnt];
-  unsigned long int current_state_counter = 0,start_time = 0;
+  unsigned long int current_state_counter = 0,last_state_start_time = 0;
   
   public:
   s_seq(byte t_pin, byte t_state_per_array, byte t_array_count, byte t_repeat_count, unsigned long int t_state_duration, unsigned long int t_dummy_state_count);

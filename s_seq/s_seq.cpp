@@ -61,7 +61,7 @@ void s_seq::play()	// This is the main function
 			{
 				//Serial.println(current_state_counter);
 				//show_data();
-				digitalWrite(pin,_dummy_bit);
+				digitalWrite(pin,dummy_bit);
 				current_state_counter++;
 			}
 			last_state_start_time = millis(); // updating current state's time for next state's referance
