@@ -64,8 +64,8 @@ void s_seq::play()	// This is the main function
 				digitalWrite(pin,dummy_bit);
 				current_state_counter++;
 			}
-			last_state_start_time = millis(); // updating current state's time for next state's referance
 		}
+		last_state_start_time = millis(); // updating current state's time for next state's referance
 	}
 }
 
