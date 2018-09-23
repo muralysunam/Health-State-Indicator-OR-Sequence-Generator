@@ -7,13 +7,13 @@
 //                                                                                                             //
 //  Filename : s_seq.cpp                                                                                       //
 //  Description : Part of s_seq library.                                                                       //
-//  Library version : 0.2                                                                                      //
+//  Library version : 0.3                                                                                      //
 //  Author : Manu M                                                                                            //
 //  Source : https://github.com/muralysunam/Health-State-Indicator-OR-Sequence-Generator/tree/master/s_seq     //
 //  Initial release : +05:30 09:42 PM, 22-09-2018, Saturday                                                    //
 //  License : MIT                                                                                              //
 //                                                                                                             //
-//  File last modified : +05:30 09:42 PM, 22-09-2018, Saturday                                                 //
+//  File last modified : +05:30 04:13 PM, 23-09-2018, Saturday                                                 //
 //                                                                                                             //
 //=============================================================================================================//
 
@@ -70,7 +70,7 @@ void s_seq::play()
 					if(lifetime[i-1]) 	//all sequence's life lime is checked here. If life time is 1, that sequence is cleared else decremented. If zero, infinite life
 					{
 						if(lifetime[i-1] == 1)
-							clear_data(i-1);
+							clear_data(i);
 						else
 							lifetime[i-1]--;
 					}
