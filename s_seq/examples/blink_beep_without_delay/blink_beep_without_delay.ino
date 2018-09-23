@@ -1,9 +1,9 @@
 /*
  * This is an example file for s_seq.h 
  * 
- * Buzzer should be connected to pin number 18.
+ * Buzzer should be connected to pin number 4.
  * If buzzer is not available, you can use arduino's LED to see output
- * For using LED, change pin number from 4 to 13 in line 16
+ * For using LED, change pin number from 4 to 13 in line 18
  * This will beep/blink every minutes. Beep count depends on current minute. It will reset after 10 minutes.
  * You can know the time passed once the program started(it repeates after 10 counts)
  * s_seq library is availble https://github.com/muralysunam/Health-State-Indicator-OR-Sequence-Generator/tree/master/s_seq 
