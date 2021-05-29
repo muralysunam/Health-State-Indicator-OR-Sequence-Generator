@@ -30,18 +30,18 @@ The library will be automatically detected by Arduino IDE (after restarting).
 ## Running the tests
 
 Try the code shown below to ensure the class is working.
-```
-#include "s_seq.h"
-void loop()
-{
-  s_seq led(13,16,1,1,100,10);
+```#include "s_seq.h"
+
+s_seq led(13,16,1,500);
+
+void setup() {
   led.put_data(1,0x8800);//high in 1st and 5th state
-  while(1)
-  {
+}
+
+void loop() {
 /*     It is adviced to put user codes here;
 */
     led.play();
-  }
 }
 ```
 
