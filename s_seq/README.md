@@ -51,7 +51,7 @@ void loop()
 After this, the whole sequence will repeat endless.
 
 ## Coding styles
-  Please note: play() should be called as fast as possible (the more frequent it is called, that much precision will be available for the sequence's state duration). If the actual code is taking large execution time, play() can be put in between(n number of time as required =D). play() is taking current time (time this function is called) and changing output state as required (compared to last state change time).
+  Please note: play() should be called as fast as possible (the more frequent it is called, that much precision will be available for the sequence's state duration). If the actual code is taking large execution time, play() can be put in between (n number of time as required). play() is taking current time (time this function is called) and changing output state as required (compared to last state change time).
 
 ## Deployment
 
