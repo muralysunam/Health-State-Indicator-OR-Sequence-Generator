@@ -20,7 +20,7 @@ The library will be automatically detected by Arduino IDE (after restarting).
 2) number of elements - This will decide state_per_array and array_count
 3) state_duration - actual duration of each state in milli seconds.
 
-  Before creating object, below shown details should be identified (for health/status indication
+  Before creating object, below shown details should be identified (for health/status indication)
 1) pin no - The sequence should be generated in which pin
 2) number of elements - This will decide state_per_array and array_count
 3) state_duration - actual duration of each state in milli seconds.
