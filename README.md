@@ -5,3 +5,5 @@ It can used for showing current status of micro controllers and the same can be 
 19-09-2018 - Tested on one simple project. Working fine.
 
 22-09-2018 - Updated to 0.2.1 - working.
+
+23-09-2018 - Updated to 0.3.1 - working. - bugfix
