@@ -45,10 +45,9 @@ void loop() {
 }
 ```
 
-  This example will make a sequence of 16 states which will repeat one more time immediately and then add 16 dummy states.
+  This example will make a sequence of 16 states which will restart/repeat endlessly.
 
-  Since added data is 0x8800 (0b1000100000000000), led will blink twice with a delay of 300ms (3 states*state_duration). Then it will stay off for 3300ms (3.3sec, 11states * sate_duration). repeat_count is set as 1. So this sequence will repeat once more. Then it will be off for 1000ms (dummy_states,10 states*state_duration).
-After this, the whole sequence will repeat endless.
+  Since added data is 0x8800 (0b1000100000000000), led will blink twice with a delay of 1.5 s (3 states*state_duration). Then it will stay off for 5500ms (5.5sec, 11 states * state_duration). After this, the whole sequence will repeat endlessly.
 
 ## Coding styles
   Please note: play() should be called as fast as possible (the more frequent it is called, that much precision will be available for the sequence's state duration). If the actual code is taking large execution time, play() can be put in between (n number of time as required). play() is taking current time (time this function is called) and changing output state as required (compared to last state change time).
